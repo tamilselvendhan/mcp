@@ -191,22 +191,3 @@ async def call_tool(name: str, arguments: dict):
         type="text",
         text=json.dumps({"error": f"Unknown tool: {name}"})
     )]
-
-async def main():
-    """Run the MCP server"""
-    logger.info(">>> Entering main() function <<<")
-    from mcp.server.stdio import stdio_server
-    
-    logger.info("Starting stdio_server...")
-    async with stdio_server() as (read_stream, write_stream):
-        logger.info("✓ stdio_server initialized")
-        logger.info("Running server.run()...")
-        await server.run(
-            read_stream,
-            write_stream,
-            server.create_initialization_options()
-        )
-
-if __name__ == "__main__":
-    logger.info("__main__ block executed")
-    asyncio.run(main())

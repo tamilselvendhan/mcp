@@ -1,4 +1,4 @@
 fastapi
 uvicorn
 psycopg2-binary
-mcp
+mcp>=0.3.0
