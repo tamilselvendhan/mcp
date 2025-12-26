@@ -10,7 +10,7 @@ from mcp.server.http import HttpServer
 from mcp.server import Server
 import os
 
-CONNECTION_STRING = os.environ["DATABASE_URL"]
+CONNECTION_STRING = os.environ["SUPABASE_DB"]
 
 # Configure logging
 logging.basicConfig(
